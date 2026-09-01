@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+
+<title>You're in — CULINARA</title>
+<meta name="description" content="Thanks for joining CULINARA. Here's what happens next and how quickly we respond.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.culinara.com/thank-you.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+  .thanks-main { max-width: 620px; margin: 0 auto; padding: 64px 20px 100px; text-align: center; }
+  .breadcrumbs { font-family: var(--font-mono); font-size: 12px; color: var(--ink-faint); margin-bottom: 40px; text-align: left; }
+  .breadcrumbs a { color: var(--ink-faint); }
+  .breadcrumbs a:hover { color: var(--brass-bright); }
+  .thanks-icon { font-size: 40px; margin-bottom: 20px; }
+  .thanks-main h1 { font-family: var(--font-display); font-size: clamp(30px, 5vw, 44px); margin: 0 0 16px; }
+  .thanks-sub { color: var(--ink-soft); font-size: 16px; line-height: 1.7; margin: 0 0 28px; }
+  .response-promise {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--surface-2); border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: 10px 20px; font-family: var(--font-mono); font-size: 13px; color: var(--brass-bright);
+    margin-bottom: 40px;
+  }
+  .thanks-next { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); padding: 28px 30px; margin-bottom: 36px; }
+  .thanks-next h2 { font-family: var(--font-display); font-size: 18px; margin: 0 0 14px; }
+  .thanks-next ol { margin: 0; padding-left: 20px; color: var(--ink-soft); line-height: 1.8; }
+  .thanks-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; font-family: var(--font-mono); font-size: 13px; }
+  .thanks-links a { color: var(--ink-soft); }
+  .thanks-links a:hover { color: var(--brass-bright); }
+</style>
+<script src="js/analytics.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="brandmark" aria-label="CULINARA home">
+      <img src="assets/logo-mark.png" alt="" class="brandmark-icon" width="32" height="32">
+      CULINARA
+    </a>
+  </div>
+</header>
+
+<main class="thanks-main">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a> / <span aria-current="page">Thank you</span>
+  </nav>
+
+  <div class="thanks-icon" aria-hidden="true">🍽️</div>
+  <h1 id="thanks-heading">You're on the list.</h1>
+  <p class="thanks-sub" id="thanks-message">
+    Thanks for signing up for CULINARA. Check your inbox for a verification email to activate your account.
+  </p>
+
+  <p class="response-promise">⏱ We respond to every application within 2 business days</p>
+
+  <div class="thanks-next">
+    <h2>What happens next</h2>
+    <ol>
+      <li>Check your email (including spam/promotions) for a verification link.</li>
+      <li>Click the link to activate your account.</li>
+      <li>We review every application by hand — you'll hear from us within 2 business days.</li>
+      <li>Once verified (and, for chefs, approved) you can log in and get started.</li>
+    </ol>
+  </div>
+
+  <nav class="thanks-links" aria-label="Where to next">
+    <a href="/index.html#pass">Meet the chefs</a>
+    <a href="/index.html#faq">Read the FAQs</a>
+    <a href="/account.html">Log in</a>
+    <a href="/index.html">Back to homepage</a>
+  </nav>
+</main>
+
+<script>
+  // Personalize the message based on which form the visitor came from,
+  // e.g. thank-you.html?role=chef or ?role=client
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const role = params.get('role');
+    const msg = document.getElementById('thanks-message');
+    const heading = document.getElementById('thanks-heading');
+    if (role === 'chef') {
+      heading.textContent = "You're on the pass.";
+      msg.textContent = "Thanks for applying to CULINARA. Check your inbox for a verification email, then sit tight while our team reviews your application.";
+    } else if (role === 'client') {
+      heading.textContent = "You're on the list.";
+      msg.textContent = "Thanks for joining CULINARA. Check your inbox for a verification email to activate your account and start browsing chefs.";
+    }
+  })();
+</script>
+
+</body>
+</html>

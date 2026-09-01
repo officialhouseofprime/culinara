@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+
+<title>CULINARA — Connect with Private Chefs, Booked Direct</title>
+<meta name="description" content="CULINARA connects you directly with private chefs — browse real portfolios, message chefs, and book direct for dinner parties, tasting menus, and catered events. No agencies, no middlemen.">
+<link rel="canonical" href="https://www.culinara.com/">
+
+<!-- Open Graph / social share -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CULINARA">
+<meta property="og:title" content="CULINARA — Connect with Private Chefs, Booked Direct">
+<meta property="og:description" content="Independent private chefs post real work. The people who want one find them and book direct — no agencies, no guesswork.">
+<meta property="og:url" content="https://www.culinara.com/">
+<meta property="og:image" content="https://www.culinara.com/assets/social-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CULINARA — private chefs, booked direct">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CULINARA — Connect with Private Chefs, Booked Direct">
+<meta name="twitter:description" content="Independent private chefs post real work. The people who want one find them and book direct — no agencies, no guesswork.">
+<meta name="twitter:image" content="https://www.culinara.com/assets/social-share.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Local business schema (fill in real address/phone/hours before launch) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CULINARA",
+  "description": "CULINARA connects you directly with private chefs — browse real portfolios, message chefs, and book direct for dinner parties, tasting menus, and catered events. No agencies, no middlemen.",
+  "url": "https://www.culinara.com/",
+  "email": "hello@culinara.com",
+  "image": "https://www.culinara.com/assets/logo.png",
+  "priceRange": "$$-$$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  }
+}
+</script>
+
+<!-- FAQ schema — mirrors the FAQ section below; keep both in sync -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does CULINARA work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Chefs create a profile and post real photos and video of their work. Clients browse verified chef profiles and reach out directly to book — CULINARA never sits between you as a paid middleman." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is CULINARA free to join?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, creating a chef or client account on CULINARA is free. You only pay the chef directly for the work you book." }
+    },
+    {
+      "@type": "Question",
+      "name": "How are chefs verified?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every chef application is reviewed by hand — identity, experience, and the work itself — before a profile goes live, so clients know who they're inviting into their home." }
+    },
+    {
+      "@type": "Question",
+      "name": "What kinds of chefs are on CULINARA?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Independent private chefs covering everything from weekly meal prep to full event catering, across a wide range of cuisines and specialties." }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly will I hear back after I apply or sign up?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Our team reviews every application by hand and responds within 2 business days." }
+    }
+  ]
+}
+</script>
+
+<!-- Google Search Console verification — paste the content value Search
+     Console gives you under Settings -> Ownership verification -> HTML tag -->
+<meta name="google-site-verification" content="PASTE_YOUR_VERIFICATION_CODE_HERE">
+
+<!-- Google Analytics — the real Measurement ID is set once in js/analytics.js -->
+<script src="js/analytics.js"></script>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="brandmark" aria-label="CULINARA home">
+      <img src="assets/logo-mark.png" alt="" class="brandmark-icon" width="32" height="32">
+      CULINARA
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="#about">Our Story</a>
+      <a href="#menu">Why CULINARA</a>
+      <a href="#pass">Meet the Chefs</a>
+      <a href="#stories">Case Studies</a>
+      <a href="#faq">FAQs</a>
+      <a href="account.html">Log In</a>
+      <a href="#join" class="nav-cta">Join Us</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-steam" aria-hidden="true">
+      <svg viewBox="0 0 200 400" preserveAspectRatio="none">
+        <path class="steam-path steam-1" d="M40 400 C 10 340, 70 320, 40 260 C 10 200, 70 180, 40 120 C 10 60, 70 40, 40 0" />
+        <path class="steam-path steam-2" d="M120 400 C 150 330, 90 310, 120 250 C 150 190, 90 170, 120 100 C 150 40, 90 20, 120 -30" />
+      </svg>
+    </div>
+
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Private chefs, booked direct — no restaurant required</p>
+      <h1 class="hero-title">
+        Your table.<br>
+        <em>Their craft.</em>
+      </h1>
+      <p class="hero-sub">
+        CULINARA is the place independent chefs post their real work — plated dishes, tasting menus, dinner parties, catered events — and the people who want a private chef find one they can actually trust and book directly. No agencies. No guesswork. Just the chef, the portfolio, and the table.
+      </p>
+      <div class="hero-actions">
+        <a href="#join" class="btn btn-primary">Join CULINARA</a>
+        <a href="#pass" class="btn btn-ghost">See chefs on the pass ↓</a>
+      </div>
+      <p class="response-promise-inline">⏱ We respond to every application within <strong>2 business days</strong></p>
+      <div class="hero-stats" role="list">
+        <div role="listitem"><span class="stat-num">2</span><span class="stat-label">ways to join<br>chef · client</span></div>
+        <div role="listitem"><span class="stat-num">0%</span><span class="stat-label">agency<br>middlemen</span></div>
+        <div role="listitem"><span class="stat-num">1</span><span class="stat-label">table,<br>set for you</span></div>
+      </div>
+      <div class="trust-bar" role="list" aria-label="Why you can trust CULINARA">
+        <span role="listitem">🔒 Secure, encrypted signup</span>
+        <span role="listitem">✓ Every chef application reviewed by hand</span>
+        <span role="listitem">✉️ Email verified before anyone's listed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <p class="eyebrow">Our Story</p>
+        <h2 class="section-title">A problem hiding in plain sight</h2>
+        <p class="lede">
+          Some of the best cooking happening right now isn't happening in restaurants. It's happening in home kitchens, at pop-up dinners, in catering vans on the way to someone's backyard — made by chefs who never got a storefront, a review score, or a way for strangers to find them.
+        </p>
+        <p>
+          Meanwhile, the people looking for a private chef — for a birthday, an anniversary, a weekly meal plan, a wedding — are stuck asking friends for referrals or trusting a name on a flyer. There was no real, trustworthy place for the two to meet. That's the gap CULINARA exists to close.
+        </p>
+        <p>
+          We built CULINARA as a stage for independent chefs and a front door for the people looking for them: a place to post real work, build a real reputation, and get booked — directly, fairly, on their own terms. Take a look at <a href="#pass">chefs on the pass</a> or read a few <a href="#stories">case studies</a> to see it in action.
+        </p>
+        <div class="about-mission">
+          <p class="mission-label">Our mission</p>
+          <p class="mission-text">Give every private chef a stage, and every host a way to find the right one — with nothing standing between them.</p>
+        </div>
+      </div>
+
+      <aside class="about-side">
+        <div class="ticket ticket-team">
+          <div class="ticket-hole" aria-hidden="true"></div>
+          <p class="ticket-kicker">The Team</p>
+          <p class="ticket-body">
+            CULINARA is built by a small crew who've worked kitchen lines, run private events, and spent too many hours trying to find a chef through DMs and word-of-mouth. We're chefs, engineers, and people who just really care about a good table.
+          </p>
+          <div class="ticket-perf" aria-hidden="true"></div>
+          <p class="ticket-footer">Founded 2026 · Building in public</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES / MENU ============ -->
+  <section class="section menu-section" id="menu">
+    <div class="wrap">
+      <p class="eyebrow center">Why CULINARA</p>
+      <h2 class="section-title center">What's on the menu</h2>
+      <p class="lede center">Four courses, one purpose: get real chefs in front of real clients.</p>
+
+      <div class="menu-list">
+        <article class="menu-item">
+          <div class="menu-item-num">01</div>
+          <div class="menu-item-body">
+            <h3>Verified kitchens</h3>
+            <p>Every chef profile is reviewed before it goes live — identity, experience, and the work itself — so clients know who they're actually inviting into their home.</p>
+          </div>
+        </article>
+        <article class="menu-item">
+          <div class="menu-item-num">02</div>
+          <div class="menu-item-body">
+            <h3>Book direct, no middlemen</h3>
+            <p>Chefs and clients connect straight through CULINARA. No agency cut, no call center — just a conversation and a booking.</p>
+          </div>
+        </article>
+        <article class="menu-item">
+          <div class="menu-item-num">03</div>
+          <div class="menu-item-body">
+            <h3>A portfolio that shows the work</h3>
+            <p>Chefs post photos and video of real dishes and real events, so a profile reads like a tasting, not a résumé.</p>
+          </div>
+        </article>
+        <article class="menu-item">
+          <div class="menu-item-num">04</div>
+          <div class="menu-item-body">
+            <h3>Built for every occasion</h3>
+            <p>Weekly meal prep, an intimate dinner for two, a full celebration menu for forty — one platform, sized to the table.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE PASS (chef showcase) ============ -->
+  <section class="section pass-section" id="pass">
+    <div class="wrap">
+      <p class="eyebrow center">Meet the Chefs</p>
+      <h2 class="section-title center">On the pass right now</h2>
+      <p class="lede center">A sample of chef profiles — real name, real work, and how to reach them. Every chef sets their own rail.</p>
+    </div>
+
+    <div class="pass-rail" aria-hidden="true"></div>
+
+    <div class="wrap">
+      <div class="ticket-rail-grid">
+
+        <article class="chef-ticket">
+          <span class="chef-clip" aria-hidden="true"></span>
+          <div class="chef-photo" data-chef="amara">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="38" r="20"/><path d="M14 92 C14 65 30 55 50 55 C70 55 86 65 86 92 Z"/></svg>
+          </div>
+          <h3 class="chef-name">Amara Osei</h3>
+          <p class="chef-type">West African · Private Dinners</p>
+          <div class="chef-perf" aria-hidden="true"></div>
+          <p class="chef-note">"Jollof tasting menus and full celebration spreads, plated at your table."</p>
+          <a href="account.html" class="chef-link">Find chefs like this →</a>
+        </article>
+
+        <article class="chef-ticket">
+          <span class="chef-clip" aria-hidden="true"></span>
+          <div class="chef-photo" data-chef="theo">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="38" r="20"/><path d="M14 92 C14 65 30 55 50 55 C70 55 86 65 86 92 Z"/></svg>
+          </div>
+          <h3 class="chef-name">Theo Marchetti</h3>
+          <p class="chef-type">Italian · Weekly Meal Prep</p>
+          <div class="chef-perf" aria-hidden="true"></div>
+          <p class="chef-note">"House-made pasta, portioned and delivered fresh every Sunday."</p>
+          <a href="account.html" class="chef-link">Find chefs like this →</a>
+        </article>
+
+        <article class="chef-ticket">
+          <span class="chef-clip" aria-hidden="true"></span>
+          <div class="chef-photo" data-chef="priya">
+            <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="38" r="20"/><path d="M14 92 C14 65 30 55 50 55 C70 55 86 65 86 92 Z"/></svg>
+          </div>
+          <h3 class="chef-name">Priya Nair</h3>
+          <p class="chef-type">Coastal Indian · Events &amp; Catering</p>
+          <div class="chef-perf" aria-hidden="true"></div>
+          <p class="chef-note">"Full-service catering for weddings, from live counters to dessert."</p>
+          <a href="account.html" class="chef-link">Find chefs like this →</a>
+        </article>
+
+      </div>
+
+      <p class="pass-note">Chef photos, videos, and details shown here are illustrative placeholders — real chef photos and reels appear once a profile is approved.</p>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDIES ============ -->
+  <section class="section stories-section" id="stories">
+    <div class="wrap">
+      <p class="eyebrow center">Case Studies</p>
+      <h2 class="section-title center">From application to a table set</h2>
+      <p class="lede center">Illustrative examples of how a CULINARA profile turns into real bookings — swap these for real chef stories as they come in.</p>
+
+      <div class="stories-grid">
+        <article class="story-card">
+          <p class="story-kicker">Chef · Weekly meal prep</p>
+          <h3>From zero bookings to a full weekly roster</h3>
+          <p>A chef applied with a small portfolio of home-cooked plates, got verified within two days, and posted photos of a Sunday meal-prep run. Within a month, direct inquiries filled a recurring weekly client roster — no agency fees.</p>
+          <a href="#join" class="chef-link">Apply as a chef →</a>
+        </article>
+        <article class="story-card">
+          <p class="story-kicker">Client · Dinner party</p>
+          <h3>Finding a trusted chef for an anniversary dinner</h3>
+          <p>A client browsed verified profiles, messaged a chef directly about a 12-person anniversary dinner, and had the whole menu confirmed within 48 hours — without a single agency call.</p>
+          <a href="#pass" class="chef-link">Meet the chefs →</a>
+        </article>
+        <article class="story-card">
+          <p class="story-kicker">Chef · Event catering</p>
+          <h3>Scaling from private dinners to full events</h3>
+          <p>A private-dinner chef used their portfolio of plated photos and video to land a first wedding catering inquiry, then built a case study of their own — using CULINARA's profile as a standing portfolio, not a one-off listing.</p>
+          <a href="#join" class="chef-link">Join CULINARA →</a>
+        </article>
+      </div>
+      <p class="pass-note">These are illustrative examples for a launching platform — replace with real chef and client case studies as they happen.</p>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="section reviews-section" id="reviews">
+    <div class="wrap">
+      <p class="eyebrow center">What People Say</p>
+      <h2 class="section-title center">Reviews from the table</h2>
+      <p class="lede center">Placeholder reviews — swap these for real, attributed reviews from chefs and clients before launch.</p>
+
+      <div class="reviews-grid">
+        <figure class="review-card">
+          <blockquote>"Placeholder review text. Replace with a real quote from a verified chef or client, with their permission."</blockquote>
+          <figcaption>— Add name, role (Chef/Client), city</figcaption>
+        </figure>
+        <figure class="review-card">
+          <blockquote>"Placeholder review text. Replace with a real quote from a verified chef or client, with their permission."</blockquote>
+          <figcaption>— Add name, role (Chef/Client), city</figcaption>
+        </figure>
+        <figure class="review-card">
+          <blockquote>"Placeholder review text. Replace with a real quote from a verified chef or client, with their permission."</blockquote>
+          <figcaption>— Add name, role (Chef/Client), city</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq-section" id="faq">
+    <div class="wrap">
+      <p class="eyebrow center">FAQs</p>
+      <h2 class="section-title center">Questions, answered</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How does CULINARA work?</summary>
+          <p>Chefs create a profile and post real photos and video of their work. Clients browse verified chef profiles and reach out directly to book — <a href="#menu">CULINARA never sits between you as a paid middleman</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is CULINARA free to join?</summary>
+          <p>Yes, creating a <a href="#join">chef or client account</a> is free. You only pay the chef directly for the work you book.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How are chefs verified?</summary>
+          <p>Every chef application is reviewed by hand — identity, experience, and the work itself — before a profile goes live. See a sample of chefs <a href="#pass">on the pass</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What kinds of chefs are on CULINARA?</summary>
+          <p>Independent private chefs covering everything from weekly meal prep to full event catering, across a wide range of cuisines — read a few <a href="#stories">case studies</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How quickly will I hear back after I apply or sign up?</summary>
+          <p>Our team reviews every application by hand and responds within <strong>2 business days</strong>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOIN / OPT-IN FORM ============ -->
+  <section class="section join-section" id="join">
+    <div class="wrap">
+      <p class="eyebrow center">Join Us</p>
+      <h2 class="section-title center">Pull up a seat at CULINARA</h2>
+      <p class="lede center">Tell us which side of the table you're on.</p>
+
+      <div class="join-card">
+        <div class="join-tabs" role="tablist" aria-label="Join as">
+          <button class="join-tab is-active" id="tab-chef" role="tab" aria-selected="true" aria-controls="panel-chef">I'm a Chef</button>
+          <button class="join-tab" id="tab-client" role="tab" aria-selected="false" aria-controls="panel-client" tabindex="-1">I'm a Client</button>
+        </div>
+
+        <!-- CHEF FORM -->
+        <form class="join-panel is-active" id="panel-chef" role="tabpanel" aria-labelledby="tab-chef" novalidate>
+          <p class="form-intro">Apply to join the pass. We review every application before it goes live.</p>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="chef-name">Full name</label>
+              <input type="text" id="chef-name" name="chef-name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="chef-email">Email</label>
+              <input type="email" id="chef-email" name="chef-email" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="chef-phone">Phone</label>
+              <input type="tel" id="chef-phone" name="chef-phone" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="chef-type">Type of chef <span class="optional">(optional)</span></label>
+              <input type="text" id="chef-type" name="chef-type" placeholder="e.g. Pastry, Private Dinners, Catering">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="chef-cv">Upload CV / résumé</label>
+              <div class="file-input">
+                <input type="file" id="chef-cv" name="chef-cv" accept=".pdf,.doc,.docx" required>
+                <label for="chef-cv" class="file-label">
+                  <span class="file-label-text">Choose file</span>
+                  <span class="file-label-name" data-empty="No file selected">No file selected</span>
+                </label>
+              </div>
+              <p class="field-hint">PDF or Word, up to 10MB</p>
+            </div>
+            <div class="field">
+              <label for="chef-cover">Upload cover letter</label>
+              <div class="file-input">
+                <input type="file" id="chef-cover" name="chef-cover" accept=".pdf,.doc,.docx" required>
+                <label for="chef-cover" class="file-label">
+                  <span class="file-label-text">Choose file</span>
+                  <span class="file-label-name" data-empty="No file selected">No file selected</span>
+                </label>
+              </div>
+              <p class="field-hint">PDF or Word, up to 10MB</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="chef-why">Why do you want to join CULINARA?</label>
+            <textarea id="chef-why" name="chef-why" rows="4" required placeholder="Tell us about your cooking, the kind of work you want to do more of, and why CULINARA is the right fit."></textarea>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="chef-password">Create a password</label>
+              <input type="password" id="chef-password" name="chef-password" required minlength="8" autocomplete="new-password">
+              <p class="field-hint">At least 8 characters. You'll use this to log in and manage your profile.</p>
+            </div>
+            <div class="field">
+              <label for="chef-password-confirm">Confirm password</label>
+              <input type="password" id="chef-password-confirm" name="chef-password-confirm" required minlength="8" autocomplete="new-password">
+            </div>
+          </div>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="chef-consent" name="chef-consent" required>
+            <span>I agree to the <button type="button" class="link-btn" data-open-modal="privacy">Privacy Policy &amp; Terms</button></span>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-block">Apply as a Chef</button>
+          <p class="form-status" id="chef-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <!-- CLIENT FORM -->
+        <form class="join-panel" id="panel-client" role="tabpanel" aria-labelledby="tab-client" hidden novalidate>
+          <p class="form-intro">Sign up to browse chefs and start booking.</p>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="client-name">Full name</label>
+              <input type="text" id="client-name" name="client-name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="client-email">Email</label>
+              <input type="email" id="client-email" name="client-email" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="client-phone">Phone</label>
+              <input type="tel" id="client-phone" name="client-phone" required autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="client-occasion">What are you looking for? <span class="optional">(optional)</span></label>
+              <input type="text" id="client-occasion" name="client-occasion" placeholder="e.g. weekly meals, a dinner party, a wedding">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="client-password">Create a password</label>
+              <input type="password" id="client-password" name="client-password" required minlength="8" autocomplete="new-password">
+              <p class="field-hint">At least 8 characters. You'll use this to log in and view your account.</p>
+            </div>
+            <div class="field">
+              <label for="client-password-confirm">Confirm password</label>
+              <input type="password" id="client-password-confirm" name="client-password-confirm" required minlength="8" autocomplete="new-password">
+            </div>
+          </div>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="client-consent" name="client-consent" required>
+            <span>I agree to the <button type="button" class="link-btn" data-open-modal="privacy">Privacy Policy &amp; Terms</button></span>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-block">Join as a Client</button>
+          <p class="form-status" id="client-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER / PRIVACY ============ -->
+<footer class="site-footer" id="privacy-policy">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="brandmark footer-brandmark">CULINARA</span>
+      <p>Real chefs. Real tables. Booked direct.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <p class="footer-heading">Site</p>
+        <a href="#about">Our Story</a>
+        <a href="#menu">Why CULINARA</a>
+        <a href="#pass">Meet the Chefs</a>
+        <a href="#join">Join Us</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Legal</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <button type="button" class="link-btn" data-open-modal="terms">Terms of Service</button>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Contact</p>
+        <a href="mailto:hello@culinara.com">hello@culinara.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 CULINARA. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ PRIVACY / TERMS MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <h2 id="modalTitle" class="modal-title">Privacy Policy &amp; Terms</h2>
+
+    <div class="modal-body">
+      <p class="modal-flag">This is placeholder legal copy for a landing page. Replace it with a policy reviewed by a lawyer before you launch.</p>
+
+      <h3>1. What we collect</h3>
+      <p>When you sign up, we collect the information you provide directly: name, email, phone number, and — for chef applicants — your CV/résumé, cover letter, and the answer to why you'd like to join CULINARA. Chefs who are approved may also upload photos, videos, and profile details for their public listing.</p>
+
+      <h3>2. How we use it</h3>
+      <p>We use your information to review applications, operate chef and client accounts, connect chefs with clients, and communicate with you about your account or bookings. We do not sell your personal information.</p>
+
+      <h3>3. What's public</h3>
+      <p>For approved chef profiles, your name, chef type, photos, videos, and portfolio content are shown publicly on CULINARA. Your CV, cover letter, and application answers are never made public — they're reviewed internally only.</p>
+
+      <h3>4. Data storage &amp; security</h3>
+      <p>Uploaded files and account data are stored securely and retained only as long as needed to operate your account or as required by law. You can request deletion of your data at any time.</p>
+
+      <h3>5. Your choices</h3>
+      <p>You can update your profile, withdraw an application, or delete your account at any time by contacting us at hello@culinara.com.</p>
+
+      <h3>6. Terms of use</h3>
+      <p>By joining CULINARA, chefs agree to provide accurate information and represent their own work. Clients agree to use the platform to make genuine booking inquiries. CULINARA facilitates introductions between chefs and clients; agreements about specific bookings, pricing, and service are made directly between the two parties.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#join" class="btn btn-primary btn-block">Join CULINARA</a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

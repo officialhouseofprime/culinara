@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CULINARA — Founder Dashboard</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/dashboard/dashboard.css">
+</head>
+<body>
+
+<!-- ===== LOGIN ===== -->
+<section id="loginScreen" class="login-screen">
+  <form id="loginForm" class="login-card" novalidate>
+    <p class="login-brand">CULINARA</p>
+    <h1>Founder Dashboard</h1>
+    <p class="login-sub">This area is private. Log in with your founder account.</p>
+    <div class="field">
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" required autocomplete="username">
+    </div>
+    <div class="field">
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" required autocomplete="current-password">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    <p class="login-status" id="loginStatus" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+<!-- Catches any uncaught JS error so a broken page is never silently blank —
+     shows exactly what went wrong instead of "nothing happening". -->
+<div id="fatalErrorBanner" class="fatal-error-banner" hidden></div>
+
+<!-- ===== DASHBOARD ===== -->
+<div id="appScreen" class="app-screen" hidden>
+
+  <header class="app-header">
+    <p class="app-brand">CULINARA <span>· Founder Dashboard</span></p>
+    <button id="logoutBtn" class="btn btn-ghost btn-small">Log out</button>
+  </header>
+
+  <nav class="app-tabs">
+    <button class="app-tab is-active" data-tab="overview">Overview</button>
+    <button class="app-tab" data-tab="chefs">Chefs</button>
+    <button class="app-tab" data-tab="clients">Clients</button>
+    <button class="app-tab" data-tab="bookings">Bookings</button>
+    <button class="app-tab" data-tab="earnings">Earnings</button>
+  </nav>
+
+  <main class="app-main">
+
+    <!-- OVERVIEW -->
+    <section class="tab-panel is-active" id="tab-overview">
+      <h2>Overview</h2>
+      <div class="stat-grid" id="statGrid">
+        <div class="stat-card"><span class="stat-value" id="statPending">–</span><span class="stat-label">Pending applications</span></div>
+        <div class="stat-card"><span class="stat-value" id="statApproved">–</span><span class="stat-label">Approved chefs</span></div>
+        <div class="stat-card"><span class="stat-value" id="statRejected">–</span><span class="stat-label">Rejected</span></div>
+        <div class="stat-card"><span class="stat-value" id="statClients">–</span><span class="stat-label">Clients signed up</span></div>
+        <div class="stat-card"><span class="stat-value" id="statMedia">–</span><span class="stat-label">Portfolio posts</span></div>
+        <div class="stat-card"><span class="stat-value" id="statBookingsPending">–</span><span class="stat-label">Bookings awaiting reply</span></div>
+        <div class="stat-card"><span class="stat-value" id="statBookingsTotal">–</span><span class="stat-label">Total bookings</span></div>
+        <div class="stat-card"><span class="stat-value" id="statMessages">–</span><span class="stat-label">Messages sent</span></div>
+      </div>
+
+      <div class="panel-head" style="margin-top:36px;">
+        <h2>Recent activity</h2>
+        <button class="btn btn-ghost btn-small" id="refreshActivityBtn">Refresh</button>
+      </div>
+      <div class="activity-feed" id="activityFeed">
+        <p class="empty-note">Loading…</p>
+      </div>
+    </section>
+
+    <!-- CHEFS -->
+    <section class="tab-panel" id="tab-chefs">
+      <div class="panel-head">
+        <h2>Chef applications</h2>
+        <div class="filter-row" id="chefFilters">
+          <button class="filter-chip is-active" data-status="all">All</button>
+          <button class="filter-chip" data-status="pending">Pending</button>
+          <button class="filter-chip" data-status="approved">Approved</button>
+          <button class="filter-chip" data-status="rejected">Rejected</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Email</th><th>Type</th><th>Verified</th><th>Status</th><th>Applied</th><th></th></tr></thead>
+          <tbody id="chefTableBody"></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="chefEmptyNote" hidden>No chefs in this category yet.</p>
+    </section>
+
+    <!-- CLIENTS -->
+    <section class="tab-panel" id="tab-clients">
+      <h2>Clients</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Looking for</th><th>Verified</th><th>Joined</th><th></th></tr></thead>
+          <tbody id="clientTableBody"></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="clientEmptyNote" hidden>No clients yet.</p>
+    </section>
+
+    <!-- BOOKINGS -->
+    <section class="tab-panel" id="tab-bookings">
+      <h2>Bookings</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date</th><th>Client</th><th>Chef</th><th>Agreed</th><th>Commission</th><th>Chef payout</th><th>Status</th><th>Payment</th><th></th></tr></thead>
+          <tbody id="bookingTableBody"></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="bookingEmptyNote" hidden>No bookings yet.</p>
+    </section>
+
+    <!-- EARNINGS -->
+    <section class="tab-panel" id="tab-earnings">
+      <h2>Earnings</h2>
+      <div class="stat-grid" id="earningsStatGrid">
+        <div class="stat-card"><span class="stat-value" id="earnCommission">–</span><span class="stat-label">Commission earned</span></div>
+        <div class="stat-card"><span class="stat-value" id="earnClientFees">–</span><span class="stat-label">Client fees earned</span></div>
+        <div class="stat-card"><span class="stat-value" id="earnCollected">–</span><span class="stat-label">Total revenue collected</span></div>
+        <div class="stat-card"><span class="stat-value" id="earnOwed">–</span><span class="stat-label">Owed to chefs</span></div>
+        <div class="stat-card"><span class="stat-value" id="earnPaidOut">–</span><span class="stat-label">Already paid to chefs</span></div>
+        <div class="stat-card"><span class="stat-value" id="earnAwaiting">–</span><span class="stat-label">Payouts awaiting release</span></div>
+      </div>
+
+      <div class="panel-head" style="margin-top:36px;">
+        <h2>Platform rates</h2>
+      </div>
+      <form id="settingsForm" class="settings-form">
+        <div class="settings-field">
+          <label for="setting-commission">Commission rate (% of chef's agreed amount)</label>
+          <input type="number" id="setting-commission" min="0" max="100" step="0.5">
+        </div>
+        <div class="settings-field">
+          <label for="setting-fee-type">Client service fee type</label>
+          <select id="setting-fee-type">
+            <option value="percent">Percentage of agreed amount</option>
+            <option value="flat">Flat amount</option>
+          </select>
+        </div>
+        <div class="settings-field">
+          <label for="setting-fee-value">Client service fee value</label>
+          <input type="number" id="setting-fee-value" min="0" step="0.5">
+        </div>
+        <button type="submit" class="btn btn-primary">Save rates</button>
+        <p class="form-status" id="settingsStatus"></p>
+      </form>
+      <p class="empty-note">Changing these only affects <em>new</em> bookings — existing bookings keep the rate that was in effect when they were made.</p>
+
+      <div class="panel-head" style="margin-top:36px;">
+        <h2>How payment settlement works right now</h2>
+      </div>
+      <p class="empty-note">
+        No live payment processor is connected yet (Stripe Connect isn't available to Kenya-based accounts directly, and M-Pesa Daraja requires a registered business Till). For now, clients and chefs settle payment directly (e.g. M-Pesa), and you mark each booking's payment status manually from the Bookings tab as money is confirmed.
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===== CHEF DETAIL MODAL ===== -->
+<div class="modal-overlay" id="chefModalOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="chefModalClose" aria-label="Close">×</button>
+    <div id="chefModalBody"></div>
+  </div>
+</div>
+
+<script src="/dashboard/dashboard.js"></script>
+</body>
+</html>

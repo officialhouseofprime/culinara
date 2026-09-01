@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+
+<title>Page not found — CULINARA</title>
+<meta name="description" content="This page doesn't exist on CULINARA. Head back to the homepage to browse chefs or join as a chef or client.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.culinara.com/404.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+  .error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .error-card { max-width: 520px; }
+  .error-code {
+    font-family: var(--font-mono);
+    color: var(--brass);
+    letter-spacing: 0.12em;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .error-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 6vw, 48px);
+    margin: 0 0 18px;
+  }
+  .error-sub {
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 32px;
+  }
+  .error-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .error-links {
+    margin-top: 40px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+  .error-links a { color: var(--ink-soft); }
+  .error-links a:hover { color: var(--brass-bright); }
+</style>
+<script src="js/analytics.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="brandmark" aria-label="CULINARA home">
+      <img src="assets/logo-mark.png" alt="" class="brandmark-icon" width="32" height="32">
+      CULINARA
+    </a>
+  </div>
+</header>
+
+<main class="error-page">
+  <div class="error-card">
+    <p class="error-code">ERROR 404 · TABLE NOT SET</p>
+    <h1 class="error-title">This plate never made it out.</h1>
+    <p class="error-sub">
+      The page you're looking for doesn't exist, moved, or the link was mistyped.
+      Let's get you back to the kitchen.
+    </p>
+    <div class="error-actions">
+      <a href="/" class="btn btn-primary">Back to homepage</a>
+      <a href="/index.html#pass" class="btn btn-ghost">Meet the chefs</a>
+    </div>
+    <nav class="error-links" aria-label="Helpful links">
+      <a href="/index.html#join">Join CULINARA</a>
+      <a href="/account.html">Log in</a>
+      <a href="/index.html#faq">FAQs</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</main>
+
+</body>
+</html>
