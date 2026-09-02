@@ -5,6 +5,5 @@ User-agent: *
 Allow: /
 Disallow: /account.html
 Disallow: /api/
-Disallow: /dashboard
 
 Sitemap: https://www.culinara.com/sitemap.xml
