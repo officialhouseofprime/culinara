@@ -165,3 +165,24 @@ httpServer.listen(PORT, () => {
   console.log(`  Dashboard: http://localhost:${PORT}/dashboard`);
   console.log(`  Realtime:  ws://localhost:${PORT}/ws\n`);
 });
+const express = require('express');
+const app = express();
+
+// Standard middleware
+app.use(express.json());
+
+// --- PLACE IT HERE (BEFORE FRONTEND/404 ROUTES) ---
+app.get('/robots.txt', (req, res) => {
+  res.status(200).header('Content-Type', 'text/plain');
+  res.send(`User-agent: *\nAllow: /\nDisallow: /account.html\nDisallow: /api/\n\nSitemap: https://culinara-e3wq.onrender.com/sitemap.xml`);
+});
+
+// API Routes
+app.use('/api', apiRoutes);
+
+// Frontend static pages or catch-all 404 handler (MUST BE AT THE BOTTOM)
+app.use((req, res) => {
+  res.status(404).render('404'); // or res.sendFile(...)
+});
+
+app.listen(3000, () => console.log('Server running...'));
