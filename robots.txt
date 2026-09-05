@@ -1,9 +1,9 @@
-# CULINARA — robots.txt
-# https://www.robotstxt.org/robotstxt.html
-
-User-agent: *
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send(`User-agent: *
 Allow: /
 Disallow: /account.html
 Disallow: /api/
 
-Sitemap: https://www.culinara.com/sitemap.xml
+Sitemap: https://culinara-e3wq.onrender.com/sitemap.xml`);
+});
