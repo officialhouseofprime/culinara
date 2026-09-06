@@ -1,0 +1,22 @@
+node_modules/
+.env
+*.pem
+*.key
+
+# Never commit stray secrets/tokens dropped in the project root
+jwt_temp.txt
+*_temp.txt
+*.secret
+
+# SQLite database files (generated at runtime — don't commit real user data)
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+# Uploaded documents & media (generated at runtime)
+uploads/cv/*
+!uploads/cv/.gitkeep
+uploads/cover-letters/*
+!uploads/cover-letters/.gitkeep
+uploads/media/*
+!uploads/media/.gitkeep
