@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   wireChefProfile();
   wireClientProfile();
   wireChefSearchLiveInput();
+  wireClientSearch();
   wireMenuForm();
   wireBookingModal();
   wireMessageForms();
@@ -462,6 +463,65 @@ function wireChefSearchLiveInput() {
   input.addEventListener('input', () => {
     clearTimeout(searchDebounce);
     searchDebounce = setTimeout(runChefSearch, 350);
+  });
+}
+
+/* ---------------------------------------------------------------------
+   Chef-side: search for clients by name
+   ------------------------------------------------------------------- */
+
+let clientSearchDebounce = null;
+function wireClientSearch() {
+  const form = document.getElementById('clientSearchForm');
+  const input = document.getElementById('client-search-q');
+  if (!form || !input) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    runClientSearch();
+  });
+  input.addEventListener('input', () => {
+    clearTimeout(clientSearchDebounce);
+    clientSearchDebounce = setTimeout(runClientSearch, 350);
+  });
+}
+
+async function runClientSearch() {
+  const q = document.getElementById('client-search-q').value.trim();
+  const results = document.getElementById('clientSearchResults');
+  if (!q) {
+    results.innerHTML = '<p class="search-status">Type a name to search.</p>';
+    return;
+  }
+  results.innerHTML = '<p class="search-status">Searching…</p>';
+  try {
+    const params = new URLSearchParams({ q });
+    const clients = await authedFetch(`/api/clients/search?${params.toString()}`);
+    renderClientResults(clients);
+  } catch (err) {
+    results.innerHTML = `<p class="search-status is-error">${escapeHtml(err.message)}</p>`;
+  }
+}
+
+function renderClientResults(clients) {
+  const results = document.getElementById('clientSearchResults');
+  if (!clients.length) {
+    results.innerHTML = '<p class="search-status">No clients match that name.</p>';
+    return;
+  }
+  results.innerHTML = '';
+  clients.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'chef-result-card';
+    card.innerHTML = `
+      <h3>${escapeHtml(c.fullName)}</h3>
+      ${c.occasion ? `<p class="chef-result-type">${escapeHtml(c.occasion)}</p>` : ''}
+      <div class="chef-result-actions">
+        <button type="button" class="btn btn-primary btn-small message-client-btn">Message</button>
+      </div>
+    `;
+    card.querySelector('.message-client-btn').addEventListener('click', () => openConversationWith('chef', c.id, c.fullName));
+    results.appendChild(card);
   });
 }
 

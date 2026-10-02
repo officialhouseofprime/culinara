@@ -50,6 +50,29 @@ router.post('/signup', authLimiter, async (req, res) => {
   }
 });
 
+// ---- GET /api/clients/search (chefs only) ----
+// Lets a chef look up a client by name — e.g. to find someone they've
+// already spoken with elsewhere, or to pick up a conversation. Unlike the
+// public chef search (which is anonymous, since chefs want to be found),
+// this requires the requester to be a logged-in, verified chef, and only
+// ever returns a client's name and what they're looking for — never their
+// email, phone, or payment details. Those stay private to the client and
+// to admin, exactly as everywhere else on the platform.
+router.get('/search', requireRole('chef'), (req, res) => {
+  const { q } = req.query;
+  let sql = `SELECT id, full_name, occasion FROM clients WHERE email_verified = 1`;
+  const params = [];
+
+  if (q) {
+    sql += ` AND full_name LIKE ?`;
+    params.push(`%${q}%`);
+  }
+  sql += ' ORDER BY full_name ASC LIMIT 50';
+
+  const rows = db.prepare(sql).all(...params);
+  res.json(rows.map(r => ({ id: r.id, fullName: r.full_name, occasion: r.occasion })));
+});
+
 // ---- GET /api/clients/me ----
 router.get('/me', requireRole('client'), (req, res) => {
   const row = db.prepare('SELECT id, full_name, email, phone, occasion, payment_method_type, payment_method_value, email_verified, created_at FROM clients WHERE id = ?').get(req.user.id);
